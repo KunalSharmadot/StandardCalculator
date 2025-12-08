@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/icons/calculator.png" type="image/png">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="left-header">
+            <img src="assets/icons/calculator.png" alt="notFound" title="Calculator Logo" class="logo" />
+            <p>Calculator</p>
+        </div>
+        <div id="right-header">
+            <svg class="sub-header" width="30" height="25" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0%" y1="0%" x2="10" y2="0" id="minus" />
+            </svg>
+            <svg class="sub-header" width="30" height="25" xmlns="http://www.w3.org/2000/svg">
+                <rect width="30%" height="30%" id="maximize-2" />
+                <rect width="30%" height="30%" id="maximize" />
+            </svg>
+            <svg class="sub-header" width="50" height="25" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="0" x2="10" y2="11" id="close" />
+                <line x1="0" y1="45%" x2="10" y2="0" id="close" />
+            </svg>
+        </div>
+    </header>
+    <nav>
+        <div class="left-nav">
+            <button class="menu">
+                <!-- svg -->
+            </button>
+            <div>
+                Standard
+            </div>
+        </div>
+        <div class="right-nav">
+            <div class="sub-record active" id="history">History</div>
+            <div class="sub-record active" id="memory">Memory</div>
+        </div>
+    </nav>
+    <main class="main-section">
+        <section class="left-main">
+            <div id="calculation">
+                <input type="text" value="0" class="display no-arrows">
+            </div>
+            <!-- <input type="number" name="number"placeholder="0" /> -->
+            <div class="keys">
+                <button class="btn btn-op" onclick="handleOperator('%')">%</button>
+                <button class="btn btn-clear" onclick="clearAll()">C</button>
+                <button class="btn btn-op" onclick="clearLastEntry()">CE</button>
+                <button class="btn btn-op" onclick="handleBack()">⌫</button>
+
+                <button class="btn btn-op" onclick="handleFraction()">1/x</button>
+                <button class="btn btn-op" onclick="handleSquare()">x<sup>2</sup></button>
+                <button class="btn btn-op" onclick="handleSquareRoot()">√x</button>
+                <button class="btn btn-op" onclick="handleOperator('÷')">÷</button>
+
+                <button class="btn btn-num" onclick="handleNumber('7')">7</button>
+                <button class="btn btn-num" onclick="handleNumber('8')">8</button>
+                <button class="btn btn-num" onclick="handleNumber('9')">9</button>
+                <button class="btn btn-op" onclick="handleOperator('×')">×</button>
+
+                <button class="btn btn-num" onclick="handleNumber('4')">4</button>
+                <button class="btn btn-num" onclick="handleNumber('5')">5</button>
+                <button class="btn btn-num" onclick="handleNumber('6')">6</button>
+                <button class="btn btn-op" onclick="handleOperator('-')">-</button>
+
+                <button class="btn btn-num" onclick="handleNumber('1')">1</button>
+                <button class="btn btn-num" onclick="handleNumber('2')">2</button>
+                <button class="btn btn-num" onclick="handleNumber('3')">3</button>
+                <button class="btn btn-op" onclick="handleOperator('+')">+</button>
+
+                <button class="btn btn-num" onclick="handleToggleSign()">+/-</button>
+                <button class="btn btn-num" onclick="handleNumber('0')">0</button>
+                <button class="btn btn-num" onclick="handleNumber('.')">.</button>
+                <button class="btn btn-eq" onclick="handleEqual()">=</button>
+            </div>
+        </section>
+        <section class="right-main">
+            <div id="history-section" class="panel">
+                <div id="history-list"></div>
+            </div>
+            <div id="memory-section">There's nothing saved in memory.</div>
+        </section>
+    </main>
+
+</body>
+
+<script src="computeResult.js"></script>
+<script src="Toggle.js"></script>
+
+</html>
